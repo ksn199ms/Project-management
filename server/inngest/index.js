@@ -46,7 +46,7 @@ const syncUserUpdation = inngest.createFunction(
   async ({ event }) => {
     const { data } = event;
 
-    await prisma.user.delete({
+    await prisma.user.update({
       where: {
         id: data.id,
       },
